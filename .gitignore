@@ -1,0 +1,3 @@
+*.local.neon
+vendor/
+/app/config/debugger-enable

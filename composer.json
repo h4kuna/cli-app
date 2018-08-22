@@ -1,0 +1,31 @@
+{
+  "name": "h4kuna/cli-app",
+  "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Milan Matějček",
+      "email": "milan.matejcek@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">7.1",
+    "contributte/console": "^0.5.0",
+    "nette/bootstrap": "~2.4",
+    "nette/di": "~2.4",
+    "symfony/console": "~4.1"
+  },
+  "require-dev": {
+    "tracy/tracy": "~2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "h4kuna\\Cli\\App\\": "app/src/"
+    },
+    "files": [
+      "app/src/functions/execute.php"
+    ]
+  },
+  "minimum-stability": "dev"
+}

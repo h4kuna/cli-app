@@ -1,0 +1,20 @@
+includes:
+	- commands.neon
+
+services:
+	- h4kuna\Cli\App\Debug\Config(%debuggerFile%)
+
+	# Commands
+	- h4kuna\Cli\App\Commands\Debugger\Enable
+	- h4kuna\Cli\App\Commands\Debugger\Disable
+	- h4kuna\Cli\App\Commands\Debugger\Status
+
+extensions:
+    console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+
+console:
+    name: 'Cli App'
+    catchExceptions: false
+    autoExit: true
+    url: null
+    lazy: false
