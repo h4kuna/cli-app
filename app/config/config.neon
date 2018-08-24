@@ -1,5 +1,9 @@
+parameters:
+	binDir: %appDir%/../bin
+	endpoint: %binDir%/execute-me
+
 includes:
-	- commands.neon
+	- services.neon
 
 services:
 	- h4kuna\Cli\App\Debug\Config(%debuggerFile%)

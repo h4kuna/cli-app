@@ -1,2 +1,5 @@
 services:
+	# Commands
 	- h4kuna\Cli\App\Commands\HelloWorld
+
+	# Other
