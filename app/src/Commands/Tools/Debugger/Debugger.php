@@ -1,17 +1,17 @@
 <?php
 
-namespace h4kuna\Cli\App\Commands\Debugger;
+namespace h4kuna\Cli\App\Commands\Tools\Debugger;
 
-use h4kuna\Cli\App\Debug\Config;
+use h4kuna\Cli\App\Tools\Debugger AS AppDebugger;
 use Symfony\Component\Console\Command\Command;
 
 abstract class Debugger extends Command
 {
-	/** @var Config */
+	/** @var AppDebugger */
 	protected $debugConfig;
 
 
-	public function __construct(Config $debugConfig)
+	public function __construct(AppDebugger $debugConfig)
 	{
 		parent::__construct();
 		$this->debugConfig = $debugConfig;

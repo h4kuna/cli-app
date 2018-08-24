@@ -1,8 +1,8 @@
 <?php
 
-namespace h4kuna\Cli\App\Debug;
+namespace h4kuna\Cli\App\Tools;
 
-class Config
+class Debugger
 {
 	private $debuggerFile;
 

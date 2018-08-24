@@ -6,12 +6,12 @@ includes:
 	- services.neon
 
 services:
-	- h4kuna\Cli\App\Debug\Config(%debuggerFile%)
+	- h4kuna\Cli\App\Tools\Debugger(%debuggerFile%)
 
 	# Commands
-	- h4kuna\Cli\App\Commands\Debugger\Enable
-	- h4kuna\Cli\App\Commands\Debugger\Disable
-	- h4kuna\Cli\App\Commands\Debugger\Status
+	- h4kuna\Cli\App\Commands\Tools\Debugger\Enable
+	- h4kuna\Cli\App\Commands\Tools\Debugger\Disable
+	- h4kuna\Cli\App\Commands\Tools\Debugger\Status
 
 extensions:
     console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
