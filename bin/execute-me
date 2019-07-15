@@ -1,8 +1,10 @@
 #!/usr/bin/env php
 <?php
 
-$container = require __DIR__ . '/../app/bootstrap.php';
+use h4kuna\Cli\App\Bootstrap;
 
-$application = $container->getByType(Contributte\Console\Application::class);
+require __DIR__ . '/../vendor/autoload.php';
 
-$application->run();
+Bootstrap::createContainer()
+	->getByType(Contributte\Console\Application::class)
+	->run();

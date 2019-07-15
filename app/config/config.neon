@@ -1,5 +1,5 @@
 parameters:
-	binDir: %appDir%/../bin
+	binDir: %appDir%/../../bin
 	endpoint: %binDir%/execute-me
 
 includes:
@@ -9,7 +9,6 @@ services:
 	debugger: h4kuna\Cli\App\Tools\Debugger(%debuggerFile%)
 
 	# Commands
-	- h4kuna\Cli\App\Commands\Tools\Composer
 	- h4kuna\Cli\App\Commands\Tools\Debugger\Enable
 	- h4kuna\Cli\App\Commands\Tools\Debugger\Disable
 	- h4kuna\Cli\App\Commands\Tools\Debugger\Status
