@@ -10,6 +10,7 @@ class Bootstrap
 	public static function createContainer()
 	{
 		$tempDir = __DIR__ . '/../temp';
+		$logDir = __DIR__ . '/../temp/log';
 		$debuggerFile = __DIR__ . '/../config/debugger-enable';
 
 		$configurator = new Nette\Configurator;
@@ -17,7 +18,7 @@ class Bootstrap
 		if (is_file($debuggerFile)) {
 			$configurator->setDebugMode(TRUE);
 		}
-		$configurator->enableTracy($tempDir);
+		$configurator->enableTracy($logDir);
 		$configurator->setTimeZone('Europe/Prague');
 		$configurator->setTempDirectory($tempDir);
 		$configurator->addConfig([

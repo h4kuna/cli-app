@@ -1,3 +1,4 @@
 *.local.*
 vendor/
 /app/config/debugger-enable
+/app/temp/
