@@ -6,7 +6,7 @@ includes:
 	- services.neon
 
 services:
-	debugger: h4kuna\Cli\App\Tools\Debugger(%debuggerFile%)
+	debugger: h4kuna\Cli\App\Tools\Debugger(%debuggerFile%, %tempDir%/cache)
 
 	# Commands
 	- h4kuna\Cli\App\Commands\Tools\Debugger\Enable
