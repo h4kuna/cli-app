@@ -7,19 +7,21 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Status extends Debugger
 {
+
 	protected function configure()
 	{
 		$this->setName('tools:debugger:status');
 	}
 
 
-	protected function execute(InputInterface $input, OutputInterface $output)
+	protected function execute(InputInterface $input, OutputInterface $output): int
 	{
 		if ($this->debugConfig->isEnabled()) {
 			$output->writeln('Is enabled.');
 		} else {
 			$output->writeln('Is disabled.');
 		}
+		return 0;
 	}
 
 }

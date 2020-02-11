@@ -8,15 +8,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class HelloWorld extends Command
 {
+
 	protected function configure()
 	{
 		$this->setName('hello:world');
 	}
 
 
-	protected function execute(InputInterface $input, OutputInterface $output)
+	protected function execute(InputInterface $input, OutputInterface $output): int
 	{
 		$output->writeln('Hello world!');
+		return 0;
 	}
 
 }

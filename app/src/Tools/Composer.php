@@ -6,7 +6,6 @@ use h4kuna\Cli\App\Exceptions\CommandException;
 
 class Composer
 {
-
 	/** @var string */
 	private $composerPath;
 
