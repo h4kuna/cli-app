@@ -2,9 +2,9 @@
 
 namespace h4kuna\Cli\App\Tools;
 
-use Nette\Utils;
+use Symfony\Component\Process\Process;
 
-class Debugger
+final class Debugger
 {
 	/** @var string */
 	private $debuggerFile;
@@ -12,11 +12,15 @@ class Debugger
 	/** @var string */
 	private $tempDir;
 
+	/** @var string */
+	private $logDir;
 
-	public function __construct(string $debuggerFile, string $tempDir)
+
+	public function __construct(string $debuggerFile, string $tempDir, string $logDir)
 	{
 		$this->debuggerFile = $debuggerFile;
 		$this->tempDir = $tempDir;
+		$this->logDir = $logDir;
 	}
 
 
@@ -26,11 +30,13 @@ class Debugger
 	}
 
 
-	public function disable(): void
+	public function disable(bool $purgeDirs): void
 	{
 		if ($this->isEnabled()) {
 			unlink($this->debuggerFile);
-			Utils\FileSystem::delete($this->tempDir);
+			$this->clearTempAndLog();
+		} elseif ($purgeDirs) {
+			$this->clearTempAndLog();
 		}
 	}
 
@@ -38,6 +44,13 @@ class Debugger
 	public function isEnabled(): bool
 	{
 		return is_file($this->debuggerFile);
+	}
+
+
+	private function clearTempAndLog(): void
+	{
+		Process::fromShellCommandline(sprintf("rm -r '%s'*", $this->tempDir . DIRECTORY_SEPARATOR))->mustRun();
+		Process::fromShellCommandline(sprintf("rm -r '%s'*", $this->logDir . DIRECTORY_SEPARATOR))->mustRun();
 	}
 
 }

@@ -8,7 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class Status extends Debugger
 {
 
-	protected function configure()
+	protected function configure(): void
 	{
 		$this->setName('tools:debugger:status');
 	}

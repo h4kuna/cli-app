@@ -10,7 +10,7 @@ class Bootstrap
 	public static function createContainer()
 	{
 		$tempDir = __DIR__ . '/../temp';
-		$logDir = __DIR__ . '/../temp/log';
+		$logDir = $tempDir . '/log';
 		$debuggerFile = __DIR__ . '/../config/debugger-enable';
 
 		$configurator = new Nette\Configurator;
@@ -24,6 +24,7 @@ class Bootstrap
 		$configurator->addConfig([
 			'parameters' => [
 				'debuggerFile' => $debuggerFile,
+				'logDir' => $logDir,
 			],
 		]);
 
