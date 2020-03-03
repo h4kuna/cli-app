@@ -5,13 +5,9 @@ namespace h4kuna\Cli\App\Commands\Tools\Debugger;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Status extends Debugger
+final class Status extends Debugger
 {
-
-	protected function configure(): void
-	{
-		$this->setName('tools:debugger:status');
-	}
+	protected static $defaultName = 'tools:debugger:status';
 
 
 	protected function execute(InputInterface $input, OutputInterface $output): int
@@ -21,6 +17,7 @@ class Status extends Debugger
 		} else {
 			$output->writeln('Is disabled.');
 		}
+
 		return 0;
 	}
 

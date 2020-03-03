@@ -4,10 +4,10 @@ namespace h4kuna\Cli\App;
 
 use Nette;
 
-class Bootstrap
+final class Bootstrap
 {
 
-	public static function createContainer()
+	public static function createContainer(): Nette\DI\Container
 	{
 		$tempDir = __DIR__ . '/../../temp';
 		$logDir = $tempDir . '/log';

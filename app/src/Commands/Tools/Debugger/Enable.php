@@ -5,19 +5,16 @@ namespace h4kuna\Cli\App\Commands\Tools\Debugger;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Enable extends Debugger
+final class Enable extends Debugger
 {
-
-	protected function configure(): void
-	{
-		$this->setName('tools:debugger:enable');
-	}
+	protected static $defaultName = 'tools:debugger:enable';
 
 
 	protected function execute(InputInterface $input, OutputInterface $output): int
 	{
 		$this->debugConfig->enable();
 		$output->writeln('Now debugger is enabled.');
+
 		return 0;
 	}
 

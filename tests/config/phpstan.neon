@@ -1,0 +1,8 @@
+parameters:
+	autoload_directories:
+		- %rootDir%/../../../tests/src/
+
+	ignoreErrors:
+		# iterable types
+		# - '~return type has no value type specified in iterable type Symfony~'
+		# - '~has parameter \$.+? with no value type specified in iterable type Symfony~'

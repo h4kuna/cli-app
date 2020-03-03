@@ -2,7 +2,7 @@
 
 namespace h4kuna\Cli\App\Exceptions;
 
-final class CommandException extends \RuntimeException
+final class InvalidStateException extends \RuntimeException
 {
 
 }

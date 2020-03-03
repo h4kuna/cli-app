@@ -4,7 +4,7 @@ namespace h4kuna\Cli\App\Tools;
 
 use h4kuna\Cli\App\Exceptions\CommandException;
 
-class Composer
+final class Composer
 {
 	/** @var string */
 	private $composerPath;
@@ -35,7 +35,8 @@ class Composer
 		$composerDir = dirname($this->composerPath);
 		$composerSetup = $composerDir . '/composer-setup.php';
 		copy('https://getcomposer.org/installer', $composerSetup);
-		if (hash_file('SHA384', $composerSetup) !== rtrim(file_get_contents('https://composer.github.io/installer.sig'))) {
+
+		if (hash_file('SHA384', $composerSetup) !== rtrim(Input::fileContent('https://composer.github.io/installer.sig'))) {
 			return FALSE;
 		}
 
@@ -63,6 +64,9 @@ class Composer
 	}
 
 
+	/**
+	 * @return array<string>
+	 */
 	private static function execute(string $command): array
 	{
 		exec($command, $output, $returnCode);
