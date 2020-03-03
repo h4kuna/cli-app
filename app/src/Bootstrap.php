@@ -9,7 +9,7 @@ class Bootstrap
 
 	public static function createContainer()
 	{
-		$tempDir = __DIR__ . '/../temp';
+		$tempDir = __DIR__ . '/../../temp';
 		$logDir = $tempDir . '/log';
 		$debuggerFile = __DIR__ . '/../config/debugger-enable';
 
