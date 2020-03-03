@@ -24,6 +24,7 @@ class Bootstrap
 		$configurator->addConfig([
 			'parameters' => [
 				'debuggerFile' => $debuggerFile,
+				'hostname' => php_uname('n'),
 				'logDir' => $logDir,
 			],
 		]);
