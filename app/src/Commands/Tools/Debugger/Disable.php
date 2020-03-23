@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class Disable extends Debugger
 {
-	protected static $defaultName = 'tools:debugger:enable';
+	protected static $defaultName = 'tools:debugger:disable';
 
 
 	protected function configure(): void
