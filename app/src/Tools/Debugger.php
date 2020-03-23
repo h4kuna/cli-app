@@ -50,7 +50,7 @@ final class Debugger
 	private function clearTempAndLog(): void
 	{
 		Process::fromShellCommandline(sprintf("rm -r '%s'*", $this->tempDir . DIRECTORY_SEPARATOR))->mustRun();
-		Process::fromShellCommandline(sprintf("rm -r '%s'*", $this->logDir . DIRECTORY_SEPARATOR))->mustRun();
+		Process::fromShellCommandline(sprintf("find '%s' -type f -mtime +30 -delete", $this->logDir . DIRECTORY_SEPARATOR))->mustRun();
 	}
 
 }
