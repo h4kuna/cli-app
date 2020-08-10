@@ -15,7 +15,7 @@ final class HelloWorld extends Command
 	{
 		$output->writeln('Hello world!');
 
-		return 0;
+		return self::SUCCESS;
 	}
 
 }

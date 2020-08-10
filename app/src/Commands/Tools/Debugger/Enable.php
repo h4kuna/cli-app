@@ -15,7 +15,7 @@ final class Enable extends Debugger
 		$this->debugConfig->enable();
 		$output->writeln('Now debugger is enabled.');
 
-		return 0;
+		return self::SUCCESS;
 	}
 
 }

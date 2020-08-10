@@ -23,7 +23,7 @@ final class Disable extends Debugger
 		$this->debugConfig->disable(Input::toBool($input, 'force'));
 		$output->writeln('Now debugger is disabled.');
 
-		return 0;
+		return self::SUCCESS;
 	}
 
 }

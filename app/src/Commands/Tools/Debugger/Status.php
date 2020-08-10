@@ -18,7 +18,7 @@ final class Status extends Debugger
 			$output->writeln('Is disabled.');
 		}
 
-		return 0;
+		return self::SUCCESS;
 	}
 
 }
