@@ -1,6 +1,7 @@
 parameters:
 	binDir: %appDir%/../../bin
 	endpoint: %binDir%/execute-me
+	email: fill@me.xyz
 
 includes:
 	- services.neon
@@ -11,6 +12,7 @@ services:
 	# Commands
 	- h4kuna\Cli\App\Commands\Tools\Debugger\Enable
 	- h4kuna\Cli\App\Commands\Tools\Debugger\Disable
+	- h4kuna\Cli\App\Commands\Tools\Debugger\Mail(%mailer%)
 	- h4kuna\Cli\App\Commands\Tools\Debugger\Status
 
 extensions:
@@ -22,3 +24,6 @@ console:
     autoExit: true
     url: null
     lazy: false
+
+mail:
+	smtp: false
