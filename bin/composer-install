@@ -2,6 +2,7 @@
 <?php
 
 require __DIR__ . '/../app/src/Tools/Composer.php';
+require __DIR__ . '/../app/src/Tools/Input.php';
 
 if ((new h4kuna\Cli\App\Tools\Composer(__DIR__ . '/composer.local.phar', __DIR__ . '/..'))->install()) {
 	echo 'Composer is ready.';
